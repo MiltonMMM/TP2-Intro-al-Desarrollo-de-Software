@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Rally MTB 2025 - Inicio{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>{{ evento.nombre }}</h1>
+    <p>{{ evento.descripcion }}</p>
+    <a href="{{ url_for('registration') }}" class="btn">Inscribite ahora</a>
+</div>
+
+<div class="info-section">
+    <h2>Detalles del Evento</h2>
+    <ul>
+        <li><strong>Fecha:</strong> {{ evento.fecha }}</li>
+        <li><strong>Hora:</strong> {{ evento.horario }}</li>
+        <li><strong>Lugar:</strong> {{ evento.lugar }}</li>
+        <li><strong>Modalidades:</strong>
+            {% for mod in evento.modalidad_costo.values() %}
+                {{ mod.nombre }} ({{ mod.valor }} USD)
+                {% if not loop.last %}, {% endif %}
+            {% endfor %}
+        </li>
+    </ul>
+</div>
+
+<div class="map-section">
+    <h2>Recorrido</h2>
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104682.59706832838!2d-59.2770283!3d-37.3217939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca5c1d3a8a8f%3A0x3a8e3d4f8c0e9b0a!2sTandil%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1712345678901!5m2!1ses-419!2sar" 
+        width="100%" 
+        height="400" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+    </iframe>
+    <p><strong>Punto de salida/llegada:</strong> Plaza Independencia, Tandil</p>
+    <p><strong>Puntos de hidratación:</strong> Km 15, Km 30, Km 50, Km 70</p>
+</div>
+
+<div class="sponsors">
+    <h2>Auspiciantes</h2>
+    <div class="sponsor-logos">
+        {% for ausp in evento.Auspiciantes %}
+            <img src="{{ url_for('static', filename='imagenes/sponsor-placeholder.png') }}" alt="{{ ausp }}" title="{{ ausp }}">
+        {% endfor %}
+    </div>
+</div>
+
+<div class="kit-section">
+    <h2>Kit de Carrera</h2>
+    <ul>
+        <li>Camiseta técnica</li>
+        <li>Número de competidor</li>
+        <li>Medalla finisher</li>
+        <li>Acceso a hidratación y asistencia mecánica</li>
+    </ul>
+</div>
+{% endblock %}

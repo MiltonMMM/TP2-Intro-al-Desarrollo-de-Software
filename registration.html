@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Inscripción - Rally MTB 2025{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h1>Inscripción al Rally MTB 2025</h1>
+    <form method="POST">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="telefono">Teléfono (con código de área):</label>
+        <input type="tel" id="telefono" name="telefono" required>
+
+        <label>Modalidad:</label>
+        <div class="radio-group">
+            {% for id, mod in evento.modalidad_costo.items() %}
+                <label>
+                    <input type="radio" name="modalidad" value="{{ mod.nombre }} ({{ mod.valor }} USD)" required>
+                    {{ mod.nombre }} - ${{ mod.valor }} USD
+                </label>
+            {% endfor %}
+        </div>
+
+        <button type="submit" class="btn">Enviar Inscripción</button>
+    </form>
+</div>
+{% endblock %}
