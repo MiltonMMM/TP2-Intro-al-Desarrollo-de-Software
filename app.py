@@ -29,7 +29,12 @@ info_evento = {
             1: {"nombre": "Corta", "valor": "100"},
             2: {"nombre": "Larga", "valor": "200"}
         },
-        "Auspiciantes": ["Patagonia", "Trek Bikes", "Red Bull", "Decathlon"]
+        "Auspiciantes": {
+            "Manaos": "manaos.png",
+            "Trek Bikes": "trek_bikes.png",
+            "Red Bull": "red_bull.png",
+            "Decathlon": "decathlon.png"
+        }
     }
 }
 

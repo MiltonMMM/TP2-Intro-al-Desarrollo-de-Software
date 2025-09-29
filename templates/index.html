@@ -41,8 +41,8 @@
 <div class="sponsors">
     <h2>Auspiciantes</h2>
     <div class="sponsor-logos">
-        {% for ausp in evento.Auspiciantes %}
-            <img src="{{ url_for('static', filename='imagenes/sponsor-placeholder.png') }}" alt="{{ ausp }}" title="{{ ausp }}">
+        {% for ausp, logo in evento.Auspiciantes.items()  %}
+            <img src="{{ url_for('static', filename='images/' ~ logo) }}" alt="{{ ausp }}" title="{{ ausp }}">
         {% endfor %}
     </div>
 </div>
