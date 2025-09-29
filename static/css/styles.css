@@ -97,6 +97,13 @@ main {
     background-color: #c0392b;
 }
 
+.hero img {
+    width: 100%;   
+    max-height: 300px; 
+    object-fit: cover; 
+    border-radius: 10px;
+}
+
 /* Info Section */
 .info-section {
     background: white;
