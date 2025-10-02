@@ -3,14 +3,12 @@
 mkdir TP2-IDS
 cd TP2-IDS
 
-mkdir static/css
-mkdir static/images
-mkdir templates
+mkdir -p static/css
+mkdir -p static/images
+mkdir -p templates
 
 touch app.py
 
-python3 -m venv .venv
-
-source .venv/bin/activate
-pip install flask
-pip install flask-mail
+export PIPENV_VENV_IN_PROJECT=1
+pipenv install flask
+pipenv install flask-mail
