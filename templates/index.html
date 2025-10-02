@@ -34,6 +34,8 @@
         allowfullscreen="" 
         loading="lazy">
     </iframe>
+    <p><strong>Punto de salida/llegada:</strong> Plaza Independencia, Tandil</p>
+    <p><strong>Puntos de hidratación:</strong> Km 10, Km 20</p>
     <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1oOMybYmpLWuTMlHbiVNt53frPGBGX5s&ehbc=2E312F"
         width="640" 
         height="480"
@@ -56,11 +58,17 @@
 
 <div class="kit-section">
     <h2>Kit de Carrera</h2>
-    <ul>
-        <li>Camiseta técnica</li>
-        <li>Número de competidor</li>
-        <li>Medalla finisher</li>
-        <li>Acceso a hidratación y asistencia mecánica</li>
-    </ul>
+    <div class="kit-items">
+        <div class="kit-item">
+            <img src="{{ url_for('static', filename='images/remera_kit.png')}}" 
+                 alt="Camiseta técnica" title="Camiseta técnica">
+            <p>Camiseta técnica</p>
+        </div>
+        <div class="kit-item">
+            <img src="{{ url_for('static', filename='images/medalla_finisher.jpg')}}" 
+                 alt="Medalla finisher" title="Medalla finisher">
+            <p>Medalla finisher</p>
+        </div>
+    </div>
 </div>
 {% endblock %}

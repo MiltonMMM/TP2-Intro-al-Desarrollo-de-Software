@@ -188,6 +188,24 @@ main {
     padding-bottom: 0.5rem;
 }
 
+.kit-items {
+    display: flex;
+    justify-content: center; 
+    gap: 30px; 
+    flex-wrap: wrap; 
+}
+
+.kit-item {
+    text-align: center;
+    max-width: 400px;
+}
+
+.kit-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
 /* Form */
 .form-container {
     background: white;
